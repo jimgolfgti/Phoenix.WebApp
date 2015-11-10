@@ -1,8 +1,10 @@
 class HomeController {
-    constructor($scope) {
-        $scope.test = "Hello World, from Angular!";
+    constructor() {
+    }
+
+    test() {
+        this.message = "Submitted";
     }
 }
-HomeController.$inject = ["$scope"];
 
 export default HomeController;

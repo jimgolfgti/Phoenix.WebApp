@@ -1,4 +1,5 @@
 import HomeController from './controllers/home-controller'
+
 var moduleName = 'webepp';
 
 var app = angular.module(moduleName, []);
