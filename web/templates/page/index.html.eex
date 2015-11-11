@@ -3,9 +3,10 @@
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
 </div>-->
 
-<div class="panel panel-default">
+<div ng-if="home.fatal" class="alert alert-danger">{{ home.fatal }}</div>
+<div ng-if="!home.fatal" class="panel panel-default">
     <div class="panel-body">
-        <form ng-submit="home.test()">
+        <form ng-submit="home.submitLookup()">
             <div class="form-group">
                 <label>MSISDN</label>
                 <input type="tel" class="form-control" ng-model="home.msisdn" />

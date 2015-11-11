@@ -11,7 +11,6 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-console.log("Test1");
 
 import "deps/phoenix_html/web/static/js/phoenix_html"
 
@@ -25,7 +24,6 @@ import { default as webepp } from "./webepp"
 
 export var App = {
   run: function(){
-    console.log("Hello!");
     angular.bootstrap(document, [webepp]);
   }
 }

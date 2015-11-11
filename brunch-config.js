@@ -13,12 +13,12 @@ exports.config = {
       //
       // To change the order of concatenation of files, explicitly mention here
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
-      // order: {
-      //   before: [
-      //     "web/static/vendor/js/jquery-2.1.1.js",
-      //     "web/static/vendor/js/bootstrap.min.js"
-      //   ]
-      // }
+    //   order: {
+    //     before: [
+    //         "bower_components/angular/angular.js",
+    //         "bower_components/angular-phoenix/dist/angular-phoenix.js"
+    //     ]
+    //   }
     },
     stylesheets: {
       joinTo: "css/app.css"
