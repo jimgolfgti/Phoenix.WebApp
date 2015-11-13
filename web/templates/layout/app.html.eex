@@ -28,9 +28,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+                  <%= if @current_user do %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @current_user.name %><img src="<%= @current_user.avatar %>" class="img-circle"/><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn btn-danger" %></li>
+                      </ul>
+                  </li>
+                  <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><%= link "Sign in with Google", to: auth_path(@conn, :index, "google"), class: "btn btn-primary" %></li>
+                        <li><%= link "Sign in with GitHub", to: auth_path(@conn, :index, "github"), class: "btn btn-primary" %></li>
+                      </ul>
+                  </li>
+                  <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -104,6 +117,8 @@
         </div>
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script>require("web/static/js/app").App.run()</script>
   </body>
 </html>
